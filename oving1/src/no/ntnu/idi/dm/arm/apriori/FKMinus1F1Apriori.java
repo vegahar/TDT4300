@@ -13,13 +13,14 @@ public class FKMinus1F1Apriori<V> extends BaseApriori<V> {
 	}
 
 	@Override
-	public List<ItemSet<V>> aprioriGen(
-			List<ItemSet<V>> frequentCandidatesKMinus1) {
+	public List<ItemSet<V>> aprioriGen(List<ItemSet<V>> frequentCandidatesKMinus1) {
 		Collections.sort(frequentCandidatesKMinus1);
 		int allGeneratedCandidatesCounter = 0;
 		Set<ItemSet<V>> frequentCandidateSet = new HashSet<ItemSet<V>>();
+
+
 		
-		//TODO
+
 		
 		return new LinkedList<ItemSet<V>>(frequentCandidateSet);
 	}

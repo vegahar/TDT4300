@@ -10,7 +10,14 @@ public class BruteForceApriori<V> extends BaseApriori<V> {
 
 	@Override
 	public void apriori(Double minSupport) {
-		// TODO
+		int k =0;
+        List<ItemSet<V>> candidatesAtLevelK = getAllItemsetsOfSizeOne();
+
+        for (int i = 2; i<candidatesAtLevelK.size(); i++){
+            k++;
+
+
+        }
 	}
 
 }
