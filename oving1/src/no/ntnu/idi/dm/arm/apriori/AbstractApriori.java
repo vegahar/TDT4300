@@ -105,7 +105,7 @@ public abstract class AbstractApriori<V> {
 		while (candidateIterator.hasNext()) {
 			ItemSet<V> next = candidateIterator.next();
 			Double support = supportCache.get(next);
-			if (support >= minSupport) {
+            if (support >= minSupport) {
 				frequentCandidates.add(next);
 			}
 		}

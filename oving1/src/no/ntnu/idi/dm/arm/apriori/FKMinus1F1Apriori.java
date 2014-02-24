@@ -18,9 +18,6 @@ public class FKMinus1F1Apriori<V> extends BaseApriori<V> {
 		int allGeneratedCandidatesCounter = 0;
 		Set<ItemSet<V>> frequentCandidateSet = new HashSet<ItemSet<V>>();
 
-        if(frequentCandidatesKMinus1.isEmpty()){
-		    return new LinkedList<ItemSet<V>>(frequentCandidateSet);
-        }
         for(ItemSet<V> extend : frequentCandidatesKMinus1){
 
             for(ItemSet<V> frequent1 : frequent1Itemsets){
@@ -31,10 +28,17 @@ public class FKMinus1F1Apriori<V> extends BaseApriori<V> {
                     temp.addItem(item);
                 }
 
-                temp.addItem(frequent1.first());
-                if(temp.size()>1){
-                    frequentCandidateSet.add(temp);
+                temp = temp.union(frequent1);
+
+                if(temp.size() != extend.size()+1){
+                    continue;
                 }
+
+                allGeneratedCandidatesCounter++;
+                getAndCacheSupportForItemset(temp);
+                frequentCandidateSet.add(temp);
+
+
             }
         }
 
