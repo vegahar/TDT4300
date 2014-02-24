@@ -20,7 +20,15 @@ public class FkMinus1FKMinus1<V> extends BaseApriori<V> {
 		int allGeneratedCandidatesCounter = 0;
 		Set<ItemSet<V>> frequentCandidateSet = new HashSet<ItemSet<V>>();
 
-		// TODO
+        for(ItemSet<V> extend : frequentCandidatesKMinus1){
+
+            for(ItemSet<V> frequent1 : frequent1Itemsets){
+
+                ItemSet<V> temp = new ItemSet<V>();
+
+
+            }
+        }
 
 		return new LinkedList<ItemSet<V>>(frequentCandidateSet);
 	}
